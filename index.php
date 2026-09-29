@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="icon.PNG" type="image/x-icon">
 </head>
 <body>
     <div class="site-shell">
@@ -26,7 +27,7 @@
                 <table class="student-table">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
+                            <th scope="col">SL.</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
@@ -35,9 +36,12 @@
                     </thead>
                     <tbody>
                         <?php if ($data->num_rows > 0) { ?>
-                            <?php foreach ($data as $student) { ?>
+                            <?php foreach ($data as $index => $student) { ?>
+                            <?php 
+                                $counter = $index + 1;
+                            ?>
                                 <tr>
-                                    <td class="student-id"><?php echo $student['id']; ?></td>
+                                    <td class="student-id"><?php echo $counter; ?></td>
                                     <td><?php echo $student['name']; ?></td>
                                     <td><?php echo $student['email']; ?></td>
                                     <td><?php echo $student['phone']; ?></td>
